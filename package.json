@@ -14,7 +14,7 @@
     "adm-zip": "^0.5.16",
     "cohere-ai": "^7.20.0",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
+    "dotenv": "^17.4.1",
     "express": "^5.2.1",
     "express-session": "^1.18.2",
     "fs-extra": "^11.3.3",
