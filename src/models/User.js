@@ -3,18 +3,18 @@ const sequelize = require("../config/db");
 
 const User = sequelize.define("User", {
   id: {
-    type: dataTypes.INTEGER,
+    type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
   },
   googleId: {
-    type: dataTypes.STRING,
+    type: DataTypes.STRING,
     unique: true,
     allowNull: false
   },
-  name: dataTypes.STRING,
-  email: dataTypes.STRING,
-  avatar: dataTypes.STRING
+  name: DataTypes.STRING,
+  email: DataTypes.STRING,
+  avatar: DataTypes.STRING
 });
 
 module.exports = User;
