@@ -16,6 +16,21 @@ app.set("trust proxy", 1);
 app.use(session);
 app.use(passport.initialize());
 app.use(passport.session());
+
+
+// Health check endpoint
+// This API is used to verify if the server is running properly.
+// It returns server status, uptime, timestamp, and environment details.
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    uptime: process.uptime(),
+    memory: process.memoryUsage(),
+    timestamp: new Date(),
+    environment: process.env.NODE_ENV || "development"
+  });
+});
+
 app.use("/save", saveRoutes);
 
 app.use("/api", uploadRoutes);
