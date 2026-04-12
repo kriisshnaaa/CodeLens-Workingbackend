@@ -37,4 +37,10 @@ app.use("/api", uploadRoutes);
 app.use("/auth", authRoutes);
 app.use("/api", chatRoutes);
 
+app.use((req, res) => {
+  res.status(404).json({
+    message: "Route not found"
+  });
+});
+
 module.exports = app;
