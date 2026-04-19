@@ -9,12 +9,12 @@ module.exports = (req, res, next) => {
   if (!token) return res.status(401).json(null);
 
   try {
-    const secret = process.env.JWT_SECRET || "defaultsecret";
-    const decoded = jwt.verify(token, secret);
+    const secretkey = process.env.JWT_SECRET || "defaultsecret";
+    const decoded = jwt.verify(token, secretkey);
     req.user = decoded;
     next();
   } catch (err) {
-    console.error("JWT Error:", err.message);
+    console.error("JWT Error message :", err.message);
     return res.status(401).json(null);
   }
 };
