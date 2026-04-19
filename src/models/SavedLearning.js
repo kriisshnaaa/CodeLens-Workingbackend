@@ -17,7 +17,7 @@ const SavedLearning = sequelize.define("SavedLearning", {
     allowNull: false
   },
 
-  // ✅ NEW FIELD
+  //  NEW FIELD
   code: {
     type: DataTypes.TEXT,
     allowNull: true
